@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-      }
-    </style>
-    <title>Lesson 5. Learn JavaScript v2.0</title>
-  </head>
-  <body>
-    <script src="js/lesson5.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    }
+  </style>
+  <title>Lesson 5. Learn JavaScript v2.0</title>
+</head>
+
+<body>
+  <p>Задача 2: кнопка b-2 запускает функцию t2. Функция должна выводить в out-2 строку вида:<br>
+    2 4 6 ... 122, от 2 до 122 c шагом 2. Разделитель - пробел. <br>Задача решается с помощью цикла.
+  </p>
+  <button id="b-2">Запустить задачу</button>
+  <div id="out-2"></div>
+
+  <p>Задача 3: кнопка b-3 запускает функцию t3. Функция должна выводить в out-3 строку вида:
+    25 24 23 22 . . 7 от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла.
+  </p>
+  <button id="b-3">Запустить задачу 3</button>
+  <div id="out-3"></div>
+
+  <p>Задача 4: кнопка b-4 запускает функцию t4. Функция должна выводить в out-4 строку вида: 77_74_71_68_65_62_ ...
+    _38_35_ от 77
+    до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла.</p>
+  <button id="b-4">Задача 4</button>
+  <div id="out-4"></div>
+
+  <p>Задача 5: кнопка b-5 запускает функцию t5. Функция должна выводить в out-5 строку вида: 1_*2_**3_*4_** ... 17_* от
+    1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное).
+    Задача решается с помощью цикла.</p>
+  <button id="b-5">Задача 5</button>
+  <div id="out-5"></div>
+
+  <p>Задача 6: Кнопка b-6 запускает функцию t6. Функция должна выводить в out-6 строку вида:<br>
+    ******<br>
+    ******<br>
+    ******<br>
+    Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов и символ переноса строки
+    br. Количество строк (итераций, повторений) цикла вводит пользователь в i-6.</p>
+  <input type="text" id="i-6">
+  <button id="b-6">Задача 6</button>
+  <div id="out-6"></div>
+
+  <p>Задача 12: кнопка b-12 запускает функцию t12. Функция должна: получить все div.div-12 перебрать их с помощью цикла.
+    Обращение к div выглядит так elem[i] применить к каждому elem[i].style.background = ‘orange’
+  </p>
+  <div class="div-12">1 element</div>
+  <div class="div-12">2 element</div>
+  <div class="div-12">3 element</div>
+  <button id="b-12">Задача 12</button>
+
+  <p>Задача 14: кнопка b-14 запускает функцию t14 Функция должна: получить все input.i-14 перебрать их с помощью цикла.
+    Обращение к элементу выглядит так elem[i] вывести в out-14 value выбранного. Проверить выбран ли элемент можно с
+    помощью elem[i].checked.</p>
+  <label for="n-14">Выбор 1</label>
+  <input class='i-14' type="radio" name="n-14" id="n-14" checked>
+  <label for="n-15">Выбор 2</label>
+  <input class='i-14' type="radio" name="n-14" id="n-15">
+  <label for="n-16">Выбор 3</label>
+  <input class='i-14' type="radio" name="n-14" id="n-16"><br><br>
+  <button id="b-14">Задача 14</button>
+  <div class="out-14"></div>
+
+  <p>Задача 15: Кнопка b-15 запускает функцию t15 Функция должна выводить следующую последовательность<br>10 0 9 1 8
+    2 7 3 6 4 5 5 4 6 3 7 2 8 1 9 0 10
+  </p>
+  <button id="b-15">Задача 15</button>
+  <div class="out-15"></div>
+
+
+  <script src="js/lesson5.js"></script>
+</body>
+
 </html>
