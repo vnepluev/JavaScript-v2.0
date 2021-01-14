@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    }
+
+    .bg-3 {
+      color: red;
+    }
+
+    .bg-4 {
+      color: green;
+    }
+  </style>
+  <title>Lesson 9. Learn JavaScript v2.0</title>
+</head>
+
+<body>
+  <p>Добавьте кнопку .b-1, которая запускает функцию f1. Функция присваивает блоку .out-1 ширину 200px, высоту 40px.</p>
+  <button id="b-1">Задание 1</button>
+  <div class="out-1"></div>
+
+  <p>По нажатию кнопки b-3 запускайте функцию f3, которая удаляет у блока out-3 класс .bg-3</p>
+  <p>По нажатию кнопки b-4 запускайте функцию f4, которая делает toggle класса bg-4 для блока out-4.</p>
+  <div class="out-3 bg-4">out-3</div>
+  <div class="out-4">out-4</div>
+  <button class="b-3">Удалить класс</button>
+  <button class="b-31">Добавить класс</button>
+  <button class="b-4">Toggle</button>
+
+  <p>По нажатию b-5 запускайте функцию f5, которая проверяет наличие класса bg-4 у блока out-4 (да, именно bg-4 у out-4
+    ). Результат - true или false, выводите в out-5.</p>
+  <button class="b-5">Проверить класс .bg4 в out-4</button>
+  <div class="out-5"></div>
+
+  <p>По нажатию кнопки b-8 запускайте функцию f8, которая делает toggle блокам out-8 класс .bg-8. Обратите внимание, что
+    данных блоков больше одного, следовательно нужен цикл.</p>
+  <div class="out-8">Блок 8</div>
+  <div class="out-8">Блок 8</div>
+  <button class="b-8">Toggle</button>
+
+  <p>Усложним предыдущие задачи. С помощью цикла повесьте на блоки out-9 событие клик. По клику должна выполняться
+    функция
+    f9. Функция, должна добавлять класс bg-9 тому out-9 на котором кликнули.</p>
+  <div class="out-9">out-91</div>
+  <div class="out-9">out-92</div>
+  <div class="out-9">out-93</div>
+
+  <p>Добавьте кнопку .b-12, которая запускает функцию f12. Функция создает через createElement div c текстом 12 и
+    добавляет
+    ему класс bg-12. Созданный div добавляется в out-12.</p>
+  <button class="b-12">Задание 12</button>
+  <div class="out-12">out-12</div>
+
+  <p>Добавьте кнопку .b-13, которая запускает функцию f13. Функция создает через createElement div c текстом pushMe и
+    добавляет ему класс bg-13. Также, созданному div добавляется событие onclick, по которому выполняется функция f13_1.
+    Созданный div добавляется в out-13.</p>
+  <button class="b-13">Задание 13</button>
+  <div class="out-13"></div>
+
+  <p>Добавьте кнопку .b-14, которая запускает функцию f14. Функция создает через createElement div c текстом 14 и
+    добавляет
+    ему класс bg-14. Созданный div добавляется в out-14 с помощью prepend.</p>
+  <button class="b-14">Task 14</button>
+  <div class="out-14"></div>
+
+  <p>Добавьте кнопку .b-15, которая запускает функцию f15. Функция создает через createElement div c текстом 15 и
+    добавляет
+    ему класс bg-15. Созданный div добавляется в out-15 с помощью before.</p>
+  <button class="b-15">b-15</button>
+  <div class="out-15"></div>
+
+  <p>Добавьте кнопку .b-16, которая запускает функцию f16. Функция создает через createElement div c текстом 16 и
+    добавляет
+    ему класс bg-16. Созданный div добавляется в out-16 с помощью after.</p>
+  <button class="b-16">Task 16</button>
+  <div class="out-16"></div>
+
+  <p>Добавьте кнопку .b-17, которая запускает функцию f17. Функция создает через createElement div c текстом 17 и
+    добавляет
+    ему класс bg-17. Созданный div заменяет out-17 с помощью replaceWith.</p>
+  <button class="b-17">Task 17</button>
+  <div class="out-17">123</div>
+
+  <p class="p-18" data-p='Hello'>Добавьте кнопку .b-18, которая запускает функцию f18. Функция с помощью getAttribute
+    получает data-b атрибут с параграф
+    p-18 и выводит в out-18.</p>
+  <button class="b-18">b-18</button>
+  <div class="out-18"></div>
+
+  <p class="p-19" data-b='Hi'>Task 19</p>
+  <p class="p-19" data-b='All!'>Добавьте кнопку .b-19, которая запускает функцию f19. Функция с помощью getAttribute
+    получает data-b атрибут с
+    параграфов p-19 и выводит в out-19 через пробел. Обратите внимание, что элементов p-19 больше одного.</p>
+  <button class="b-19">b-19</button>
+  <div class="out-19"></div>
+
+
+
+
+  <script src="js/lesson9.js"></script>
+</body>
+
+</html>

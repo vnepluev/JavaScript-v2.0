@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-      }
-    </style>
-    <title>Lesson 4. Learn JavaScript v2.0</title>
-  </head>
-  <body>
-    <script src="js/lesson4.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    }
+  </style>
+  <title>Lesson 7. Learn JavaScript v2.0</title>
+</head>
+
+<body>
+  <p>Напишите функцию t1, которая при нажатии кнопки выводит в out-1 переменную a1.</p>
+  <button id="b-1">Task 1</button>
+  <div class="out-1"></div>
+
+  <p>Изменим задачу 1. Сейчас она только выводит переменную в заранее заданный блок. Давайте сделаем так, чтобы функция,
+    была
+    более гибкой. Пусть теперь функция t2 возвращает переменную a2. Поскольку функция возвращает переменную, то имя
+    функции
+    со скобками (вызов функции) можно встраивать в выражения. Обратите внимание, как изменился вызов функции.</p>
+  <button id="b-2">Task 2</button>
+  <div class="out-2"></div>
+
+  <p>Наша предыдущая функция, сильно все еще зависима от внешних переменных. Давайте сделаем ее более универсальной.
+    Пусть
+    функция t3 принимает 2 параметра и выводит их произведение. Допишите код функции так, чтобы она возвращала
+    произведение
+    двух чисел, переданных ей в качестве параметра a, b. Протестируем функцию на двух примерах, с помощью кнопок b3-1 и
+    b3-2.
+  </p>
+  <button id="b3-1">Пример 1</button>
+  <button id="b3-2">Пример 2</button>
+  <div class="out-3-1"></div>
+  <div class="out-3-2"></div>
+
+  <p>Напишите функцию t6, которая принимает 2 числа и возвращает случайное целое число от первого до второго принятого
+    параметра.</p>
+  <input type="text" id="i-6" placeholder="Год вашего рождения">
+  <button id="b-6">Задание 6</button>
+  <div class="out-6"></div>
+
+
+  <script src="js/lesson7.js"></script>
+</body>
+
 </html>
