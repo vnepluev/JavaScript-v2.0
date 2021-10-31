@@ -109,7 +109,8 @@ function t6() {
      min = 10000;
      max = 10099;
     // тут запускаете getRandomInt2
-
+    out2.textContent = getRandomInt2(min, max);
+    (+out2.textContent % 2) ? odd() : even();
 }
 
 document.querySelector('.b-6').addEventListener('click', t6);
@@ -123,7 +124,8 @@ const out7 = document.querySelector('.out-7');
 let z7 = 91;
 
 function t7() {
-
+    if (z7 !== 100) { z7++ };
+    out7.textContent = z7;
 }
 
 document.querySelector('.b-7').addEventListener('click', t7);
@@ -142,7 +144,9 @@ function showNumber() {
 }
 
 function t8() {
-
+    z8++;
+    showNumber();
+    if (z8 === 9) { z8 = -1 }
 }
 
 document.querySelector('.b-8').addEventListener('click', t8);
@@ -156,7 +160,7 @@ let z9 = 3;
 const s9 = document.querySelector('.s-9');
 
 function t9() {
-
+    s9[z9-1].selected = true;
 }
 
 document.querySelector('.b-9').addEventListener('click', t9);
@@ -176,7 +180,10 @@ function showArr() {
 
 function t10() {
     ar10_res = []; // очищаем
-
+    ar10.forEach(el => {
+        if (typeof el === 'number') ar10_res.push(el);
+    })
+    showArr();
 }
 
 document.querySelector('.b-10').addEventListener('click', t10);
