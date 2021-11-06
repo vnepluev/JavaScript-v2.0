@@ -155,7 +155,10 @@ let ar7 = [
 let ar7_res = [];
 
 function t7(arg) {
-
+    for (key in arg) {
+        if (typeof arg[key] === 'string') ar7_res.push(arg[key]);
+        else if (typeof arg[key] === 'object') t7(arg[key]);
+    }
 }
 
 document.querySelector('.b-7').addEventListener('click', () => {
@@ -165,10 +168,17 @@ document.querySelector('.b-7').addEventListener('click', () => {
 
 
 // Task 8.
-// Напишите рекурсивную функцию t8, которая получает с помощью randomInt целое число от 1000 до 9000 и проверяет если сумма первых двух цифр числа равна сумме 3 и 4 числа то возвращает это число. Если нет - повторяет операцию. Например число 1235 не удовлетворяет этому условию, потому что 1+2 не равно 3+5. А вот число 7180  - удовлетворяет.
+// Напишите рекурсивную функцию t8, которая получает с помощью randomInteger целое число от 1000 до 9000 и проверяет если сумма первых двух цифр числа равна сумме 3 и 4 числа то возвращает это число. Если нет - повторяет операцию. Например число 1235 не удовлетворяет этому условию, потому что 1+2 не равно 3+5. А вот число 7180  - удовлетворяет.
 
 function t8() {
+    const randomNum = randomInteger(1000, 9000) + '';
+    const a = Number(randomNum[0]) + Number(randomNum[1]);
+    const b = Number(randomNum[2]) + Number(randomNum[3]);
+    let t8_res;
 
+    (a !== b) ? t8_res = t8() : t8_res = randomNum;
+
+    return t8_res;
 }
 
 document.querySelector('.b-8').addEventListener('click', () => {
@@ -215,7 +225,10 @@ let ar9 = {
 let ar9_res = [];
 
 function t9(obj) {
-
+    for (key in obj) {
+        if (key === 'age') ar9_res.push(obj[key]);
+        else if (typeof obj[key] === 'object') t9(obj[key]);
+    }
 }
 
 document.querySelector('.b-9').addEventListener('click', () => {
@@ -267,13 +280,15 @@ let ar10 = {
 let ar10_res = [];
 
 function t10(k, obj) {
-
+    for (key in obj) {
+        if (key === 'age') ar10_res.push(k)
+        else if (typeof obj[key] === 'object') t10(key, obj[key]);
+    }
 }
 
 document.querySelector('.b-10').addEventListener('click', () => {
     for (let key in ar10) {
-        t9(key, ar10[key]);
+        t10(key, ar10[key]);
     }
-    document.querySelector('.out-19').innerHTML = ar10_res;
+    document.querySelector('.out-10').innerHTML = ar10_res;
 });
-
