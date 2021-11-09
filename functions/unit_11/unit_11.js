@@ -1,16 +1,19 @@
 // Task 1
-// При нажатии кнопки запускается функция t1. Функция t1, с помощью рекурсивной функции r1 должна добавляь в out имена всех тегов внутри блока z1. Теги добавляются через пробел. Функция t1 возвращает out. Ожидаемый вывод для данного задания DIV P SPAN DIV B I SPAN STRONG.
+// При нажатии кнопки запускается функция t1. Функция t1, с помощью рекурсивной функции r1 должна добавлять в out имена всех тегов внутри блока z1. Теги добавляются через пробел. Функция t1 возвращает out. Ожидаемый вывод для данного задания DIV P SPAN DIV B I SPAN STRONG.
 
 function t1(elem) {
     let out = '';
     r1(elem);
 
     function r1(element) {
-
+        const el = element.children;
+        Array.from(el).forEach(elem => {
+            out += elem.localName + ' ';
+            r1(elem)
+        });
     }
 
-
-    return out;
+    return `${elem.localName} ${out}`;
 }
 
 document.querySelector('.b-1').addEventListener('click', () => {
