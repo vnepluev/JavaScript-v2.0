@@ -8,9 +8,9 @@ function inputNum(num) {
 let a1 = ['hello', 't'];
 
 const f1 = () => {
-	let input = inputNum(1)
-	a1.push(input)
-	console.log(a1)
+	const i1 = document.querySelector('.i-1').value;
+	a1.push(i1);
+	console.log(a1);
 }
 
 // TASK 02
@@ -19,10 +19,9 @@ const f1 = () => {
 let a2 = ['b', 'c', 12, 34, 'dh', 17];
 
 const f2 = () => {
-	let input = +inputNum(2)
-	let kub = Math.pow(input, 3)
-	a2.push(input, kub)
-	console.log(a2)
+	const i2 = +document.querySelector('.i-2').value;
+	a2.push(i2, Math.pow(i2, 3));
+	console.log(a2);
 }
 
 // TASK 03
@@ -32,9 +31,8 @@ const f2 = () => {
 let a3 = ['a', 'b'];
 
 const f3 = () => {
-	let input = inputNum(3)
-	console.log(a3.push(input));
-	console.log(a3);
+	const i3 = document.querySelector('.i-3').value;
+	console.log(a3.push(i3), a3);
 }
 
 // TASK 04
@@ -45,8 +43,8 @@ let a4 = [1, 2];
 let a4_1 = [5, 6];
 
 const f4 = () => {
-	a4.push(a4_1)
-	console.log(a4)
+	a4.push(a4_1);
+	console.log(a4);
 }
 
 // TASK 05
@@ -56,9 +54,9 @@ const f4 = () => {
 let a5 = [55, 66, 77];
 
 const f5 = () => {
-	let input = +inputNum(5)
-	a5[a5.length] = input
-	console.log(a5)
+	const i5 = +document.querySelector('.i-5').value;
+	a5[a5.length] = i5;
+	console.log(a5);
 }
 
 // TASK 06
@@ -68,8 +66,8 @@ const f5 = () => {
 let a6 = ['a', 'b'];
 
 const f6 = (arr, elem) => {
-	arr[arr.length] = elem
-	return arr.length
+	arr[arr.length] = elem;
+	return arr.length;
 }
 
 // TASK 07
@@ -78,8 +76,8 @@ const f6 = (arr, elem) => {
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = () => {
-	a7.pop()
-	console.log(a7)
+	a7.pop();
+	console.log(a7);
 }
 
 // TASK 08
@@ -90,8 +88,7 @@ const f7 = () => {
 let a8 = [99, 98, 97, 96];
 
 const f8 = () => {
-	let pop = a8.pop()
-	return pop
+	console.log(a8.pop());
 }
 
 // TASK 09
@@ -100,8 +97,8 @@ const f8 = () => {
 let a9 = ['A', 2, true, function () { console.log(2) }, [2, 3, 4], { "test": 1 }];
 
 const f9 = () => {
-	a9.pop()
-	console.log(a9)
+	a9.pop();
+	console.log(a9);
 }
 
 // TASK 10
@@ -110,8 +107,8 @@ const f9 = () => {
 const a10 = [67, '55', 2, 5, '4', '8', 8, '66', '54', 11];
 
 const f10 = () => {
-	let del = a10.splice(- 1, 1).join()
-	return del
+	let res = a10.splice(-1, 1).join();
+	return res;
 }
 
 
