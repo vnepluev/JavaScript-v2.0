@@ -9,7 +9,9 @@ function inputNum(num) {
 let a1 = [4, 12, 4, 2, 15, 98];
 
 const f1 = () => {
-	document.querySelector('.out-1').innerHTML = a1.includes(+inputNum(1))
+	const i1 = +document.querySelector('.i-1').value;
+	const out1 = document.querySelector('.out-1');
+	out1.textContent = a1.includes(i1);
 }
 
 // TASK 02
@@ -20,13 +22,11 @@ const f1 = () => {
 let a2 = [4, 12, 4, 2, 15, 98];
 
 const f2 = () => {
-	let input = +inputNum(2)
-	if (a2.includes(input)) {
-		let index = a2.indexOf(input)
-		document.querySelector('.out-2').innerHTML = index
-	} else {
-		document.querySelector('.out-2').innerHTML = false
-	}
+	const i2 = +document.querySelector('.i-2').value;
+	const out2 = document.querySelector('.out-2');
+	let res = false;
+	if (a2.includes(i2)) res = a2.indexOf(i2);
+	out2.textContent = res;
 }
 
 // TASK 03
@@ -37,13 +37,12 @@ const f2 = () => {
 let a3 = [[3, 4, 5], [6, 7, 1], [5, 6, 7, 1, 12], [134, 234, 432]];
 
 const f3 = () => {
-	let input = +inputNum(3)
-	for (let i in a3) {
-		if (a3[i].includes(input)) {
-			return document.querySelector('.out-3').innerHTML = true
-		}
-	}
-	return document.querySelector('.out-3').innerHTML = false
+	const i3 = +document.querySelector('.i-3').value;
+	let res = false;
+	a3.forEach(el => {
+		if (el.includes(i3)) res = true;
+	})
+	document.querySelector('.out-3').textContent = res;
 }
 
 // TASK 04
@@ -53,18 +52,13 @@ const f3 = () => {
 let a4 = { a: [1, 2, 3], b: [3, 1, 5, 8], c: [88, 77, 66] };
 
 const f4 = () => {
-	let input = +inputNum(4)
-	let rez = ''
-	for (let i in a4) {
-		if (a4[i].includes(input)) {
-			rez += i + ' '
-		}
+	const i4 = +document.querySelector('.i-4').value;
+	const out4 = document.querySelector('.out-4');
+	let res = '';
+	for (key in a4) {
+		if (a4[key].includes(i4)) res += key + ' ';
 	}
-	if (rez != '') {
-		return document.querySelector('.out-4').innerHTML = rez
-	}
-	return document.querySelector('.out-4').innerHTML = false
-
+	out4.textContent = res || false;
 }
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция считывает значение из i-5-1 и индекс с которого начинается поиск в массиве с i-5-2 и с помощью includes  ищет данный элемент в массиве a5 c позиции указанной в i-5-2. Выводит в out-5 false если такого элемента при поиске с указанной позиции нет и true если есть.
@@ -77,12 +71,11 @@ const f4 = () => {
 let a5 = [22, 33, 44, 55, 66, 77, 88, 33, 44, 55, 66, 77];
 
 const f5 = () => {
-	let input = +inputNum('5-1')
-	let index = +inputNum('5-2')
-	if (a5.includes(input, index)) {
-		return document.querySelector('.out-5').innerHTML = true
-	}
-	return document.querySelector('.out-5').innerHTML = false
+	const i51 = +document.querySelector('.i-5-1').value;
+	const i52 = +document.querySelector('.i-5-2').value;
+	const out5 = document.querySelector('.out-5');
+	let res = a5.indexOf(i51, i52);
+	out5.textContent = (res > -1);
 }
 
 // TASK 06
@@ -93,11 +86,9 @@ const f5 = () => {
 let a6 = ['Hi', 'wiFI'];
 
 const f6 = () => {
-	let input = inputNum(6)
-	if (a6.includes(input)) {
-		return document.querySelector('.out-6').innerHTML = true
-	}
-	return document.querySelector('.out-6').innerHTML = false
+	const i6 = document.querySelector('.i-6').value;
+	const out6 = document.querySelector('.out-6');
+	out6.textContent = a6.includes(i6);
 }
 
 // TASK 07
@@ -107,12 +98,11 @@ const f6 = () => {
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = (arr, elem) => {
-	for (let val of arr) {
-		if (val === elem) {
-			return document.querySelector('.out-7').innerHTML = true
-		}
-	}
-	return document.querySelector('.out-7').innerHTML = false
+	let res = false;
+	arr.forEach(item => {
+		if (item === elem) res = true;
+	});
+	document.querySelector('.out-7').textContent = res;
 }
 
 // TASK 08
@@ -122,15 +112,13 @@ const f7 = (arr, elem) => {
 let a8 = 'JSbestever';
 
 const f8 = () => {
-	let input = inputNum(8)
-	if (a8.includes(input)) {
-		return document.querySelector('.out-8').innerHTML = true
-	}
-	document.querySelector('.out-8').innerHTML = false
+	const i8 = document.querySelector('.i-8').value;
+	const out8 = document.querySelector('.out-8');
+	out8.textContent = a8.includes(i8);
 }
 
 // TASK 09
-// По нажатию b-9 выполняется функция f9. Функция должна получить из i-9 символ и с помощью includes искать его в массиве a9. Обратите внимание на сложность. Если пользователь ввел символ в нижнем регистре то функция должна c помощью includes искать и в нижнем и в верхнем регистре символ в массиве. Если пользователь ввел число - то искать число. Считаем, что пользователь может ввести либо символы латинского алфавита, либо числа. Вывод true, false в out-9.
+// По нажатию b-9 выполняется функция f9. Функция должна получить из i-9 символ и с помощью includes искать его в массиве a9. Обратите внимание на сложность. Если пользователь ввел символ в нижнем регистре, то функция должна c помощью includes искать и в нижнем и в верхнем регистре символ в массиве. Если пользователь ввел число - то искать число. Считаем, что пользователь может ввести либо символы латинского алфавита, либо числа. Вывод true, false в out-9.
 // пример пользователь ввел B => true
 // пример пользователь ввел a => true
 // пример пользователь ввел 5 => true
@@ -139,17 +127,24 @@ const f8 = () => {
 let a9 = ['A', 'b', 'c', 'C', 'D', 12, 5, 'd', 1];
 
 const f9 = () => {
-	let input = inputNum(9)
-	if (a9.includes(input)) {
-		return document.querySelector('.out-9').innerHTML = true
-	} else if (a9.includes(+input)) {
-		return document.querySelector('.out-9').innerHTML = true
-	} else if (a9.includes(input.toUpperCase())) {
-		return document.querySelector('.out-9').innerHTML = true
+	const i9 = document.querySelector('.i-9').value;
+	const out9 = document.querySelector('.out-9');
+	let res = false;
+
+	if (/[a-z]/.test(i9)) {
+		res = check(i9);
+		if (!res) res = check(i9.toUpperCase());
+	} else if (/[0-9]/.test(i9)) {
+		res = check(+i9);
 	} else {
-		return document.querySelector('.out-9').innerHTML = false
+		res = check(i9);
 	}
 
+	out9.innerHTML = res;
+
+	function check(i9) {
+		return a9.includes(i9);
+	}
 }
 
 // TASK 10
@@ -158,15 +153,9 @@ const f9 = () => {
 const a10 = [67, '55', 2, 5, '4', '8', 8, '66', '54', 11, NaN];
 
 const f10 = () => {
-	if (a10.indexOf(NaN) !== -1) {
-		// не выполнится
-		console.log('Сработал indexOf');
-	}
-
-	if (a10.includes(NaN)) {
-		// выполнится
-		console.log('Сработал includes');
-	}
+	// const res = a10.includes(NaN);
+	const res = a10.indexOf(NaN);
+	console.log(res);
 }
 
 // TASK 11
