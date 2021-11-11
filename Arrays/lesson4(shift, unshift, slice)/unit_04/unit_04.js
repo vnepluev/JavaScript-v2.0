@@ -8,10 +8,10 @@ function inputNum(num) {
 let a1 = ['hello', 't'];
 
 const f1 = () => {
-	let input = inputNum(1)
-	a1.unshift(input)
-	console.log(a1)
-	return a1
+	const i1 = document.querySelector('.i-1').value;
+	a1.unshift(i1);
+	console.log(a1);
+	return a1;
 }
 
 // TASK 02
@@ -20,11 +20,10 @@ const f1 = () => {
 let a2 = ['b', 'c', 12, 34, 'dh', 17];
 
 const f2 = () => {
-	let input = +inputNum(2)
-	let kub = Math.pow(input, 3)
-	a2.unshift(input, kub)
-	console.log(a2)
-	return a2
+	const i2 = +document.querySelector('.i-2').value;
+	a2.unshift(Math.pow(i2, 3));
+	console.log(a2);
+	return a2;
 }
 
 // TASK 03
@@ -34,9 +33,8 @@ const f2 = () => {
 let a3 = ['a', 'b'];
 
 const f3 = () => {
-	let input = inputNum(3)
-	console.log(a3.unshift(input));
-	console.log(a3);
+	const i3 = document.querySelector('.i-3').value;
+	console.log(a3.unshift(i3));
 }
 
 // TASK 04
@@ -46,32 +44,33 @@ const f3 = () => {
 let a4 = [14, 15, 16, 17, 18];
 
 const f4 = () => {
-	a4.shift()
-	console.log(a4)
+	a4.shift();
+	console.log(a4);
 }
 
 // TASK 05
-// По нажатию b-5 выполняется функция f5. Функция удаляет из массива нулевое значение с помощью shift и возвращает результат операции. Выводит a4 в консоль. Изучите решение.
+// По нажатию b-5 выполняется функция f5. Функция удаляет из массива нулевое значение с помощью shift и возвращает результат операции. Выводит a5 в консоль. Изучите решение.
 
 let a5 = [55, 66, 77, 88, 99, 129];
 
 const f5 = () => {
-	return a5.shift();
+	const res = a5.shift();
+	console.log(a5);
+	return res;
 }
 
 // TASK 06
-// Давайте сделаем функцию, которая полностью будет эмулировать работу unShift без применения unShift ( push можно использовать). Функция принимает - элемент, и добавляет его в начало массива a6. Функция должна возвращать новую длину массива a6.
+// Давайте сделаем функцию, которая полностью будет эмулировать работу unShift без применения unShift ( push можно использовать). Функция принимает - элемент, и добавляет его в начало массива a6. Функция должна возвращать новую длину массива a6 и выводить массив a6 в консоль.
 
 
 let a6 = ['a', 'b', 'c', 'd', 'e', 'f'];
 
 
 const f6 = (elem) => {
-	let mas = []
-	mas[0] = elem
-	let rez = mas.concat(a6)
-	a6 = rez
-	return a6.length
+	const m = [];
+	a6 = m.concat(elem, ...a6);
+	console.log(a6);
+	return a6.length;
 }
 
 // TASK 07
@@ -80,9 +79,9 @@ const f6 = (elem) => {
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = () => {
-	a7.shift()
-	console.log(a7)
-	return a7.length
+	a7.shift();
+	console.log(a7);
+	return a7.length;
 }
 
 // TASK 08
@@ -92,8 +91,8 @@ const f7 = () => {
 let a8 = [44, 45, 46, 47, 48, 49];
 
 const f8 = () => {
-
-	console.log(a8.slice(1, 4))
+	console.log(a8.slice(1, 4));
+	console.log(a8);
 }
 
 // TASK 09
@@ -102,7 +101,8 @@ const f8 = () => {
 let a9 = ['A', 2, 43, 12, 13, 14, 15, 16];
 
 const f9 = () => {
-	console.log(a9.slice(2))
+	console.log(a9.slice(2));
+	console.log(a9);
 }
 
 // TASK 10
@@ -111,7 +111,7 @@ const f9 = () => {
 const a10 = [100, 2, 43, 12, 13, 14, 15, 16];
 
 const f10 = () => {
-	console.log(a10.slice(2, -2))
+	console.log(a10.slice(2, -2));
 }
 
 
