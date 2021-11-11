@@ -6,9 +6,8 @@ let a1 = [5, 6, 7];
 let a1_res;
 
 const f1 = () => {
-	a1_res = a1.map(item => item * 3)
-	console.log(a1)
-	console.log(a1_res)
+	a1_res = a1.map(item => item * 3);
+	console.log(a1, ' - ', a1_res);
 }
 
 // TASK 02
@@ -23,8 +22,13 @@ a2[6] = 3;
 let a2_res;
 
 const f2 = () => {
-	console.log(a2_res = a2.map(item => item * 3))
-	console.log(a2)
+	// function a2_m(item) {
+	// 	return item * 3;
+	// }
+	const a2_m = (item) => item * 3;
+
+	a2_res = a2.map(a2_m);
+	console.log(a2, ' - ', a2_res);
 }
 
 // TASK 03
@@ -36,33 +40,22 @@ let a3 = [2, 3, 4, 5, 6];
 let a3_res;
 
 const f3 = () => {
-	a3_res = a3.map((item, index) => {
-		if (index == 2) {
-			a3[3] = 100;
-		}
-		return item * 3
-	});
-	console.log(a3_res)
-	console.log(a3)
+	const a3_m = (item) => item * 3;
+	
+	a3_res = a3.map(a3_m);
+	console.log(a3, ' - ', a3_res);
 }
 
 // TASK 04
-// По нажатию b-4 выполняется функция f4. Функция применяет к a4 метод map и возвращает в массив a4_res текущий элемент массива a4 если он больше нуля или 0 если равен или меньше. Выведите в консоль оба массива после выполнения f4.
+// По нажатию b-4 выполняется функция f4. Функция применяет к a4 метод map и возвращает в массив a4_res текущий элемент массива a4. Если он больше нуля или 0 если равен или меньше. Выведите в консоль оба массива после выполнения f4.
 
 
 let a4 = [3, -2, 4, 1, 9, -3, 0, 0, 2, -8, 12];
 let a4_res;
 
 const f4 = () => {
-	a4_res = a4.map(item => {
-		if (item > 0) {
-			return item
-		} else {
-			return 0
-		}
-	})
-	console.log(a4_res)
-	console.log(a4)
+	a4_res = a4.map(item => (item > 0) ? item : item = 0);
+	console.log(a4, ' - ', a4_res);
 }
 
 // TASK 05
@@ -72,11 +65,8 @@ let a5 = [55, 66, 77];
 let a5_res;
 
 const f5 = () => {
-	a5_res = a5.map((item, index) => {
-		return index
-	})
-	console.log(a5_res)
-	console.log(a5)
+	a5_res = a5.map((item, index) => index);
+	console.log(a5, ' - ', a5_res);
 }
 
 // TASK 06
@@ -90,11 +80,8 @@ a6[6] = 3;
 let a6_res;
 
 const f6 = () => {
-	a6_res = a6.map((item, index) => {
-		return index
-	})
-	console.log(a6_res)
-	console.log(a6)
+	a6_res = a6.map((item, index) => index);
+	console.log(a6, ' - ', a6_res);
 }
 
 // TASK 07
@@ -104,11 +91,8 @@ let a7 = [[22, 13, 45], [5, 2], [5, 3, 6, 7, 9]];
 let a7_res;
 
 const f7 = () => {
-	a7_res = a7.map(item => {
-		return item.length
-	})
-	console.log(a7_res)
-	console.log(a7)
+	a7_res = a7.map(item => item.length);
+	console.log(a7, ' - ', a7_res);
 }
 
 // TASK 08
@@ -118,16 +102,13 @@ let a8 = [[22, 13, 45], [5, 2], [5, 3, 6, 7, 9]];
 let a8_res;
 
 const f8 = () => {
-	a8_res = a8.map(item => {
-		let sum = 0
-		for (let i of item) {
-			sum += i
-		}
-		return sum
-	})
-
-	console.log(a8_res)
-	console.log(a8)
+	const a8_calc = (item) => {
+		let res = 0;
+		item.forEach(element => res += element);
+		return res;
+	}
+	a8_res = a8.map(a8_calc)
+	console.log(a8, ' - ', a8_res);
 }
 
 // TASK 09
@@ -138,39 +119,30 @@ let a9_index;
 let a9_even;
 
 const f9 = () => {
-	even = a9.map(item => {
-		if (item % 2 == 0) {
-			return item
-		}
-	})
-	for (let i = 0; i < even.length; i++) {
-		if (even[i] === undefined) {
-			even.splice(i, 1)
-			i--
-		}
+	a9_index = a9.map((item, index) => index);
+	a9_even = a9.map(item => (item % 2 === 0) ? item : undefined);
+	
+	let i = a9_even.length -1;
+	while (i > -1) {
+		if (a9_even[i] === undefined) a9_even.splice(i, 1);
+		i--;
 	}
-	a9_even = even
 
-	a9_index = a9.map((item, index) => {
-		return index
-	})
-
-	console.log(a9_even)
-	console.log(a9_index)
+	console.log(a9, ' - ', a9_index, ' - ', a9_even);
 }
 
 // TASK 10
-// Ну и на прокачку ваших скиллов. Напишем функцию f10, которая эмулирует метод map. Первым параметром функция принимает массив, второмы - имя функции которая применяется к элементам массива. Возвращает новый элемент. Функция коллбек должна принимать только один параметр - текущий элемент. Примените вашу функцию так, чтобы на основе массива a10, функция f10 создала массив a20_res, который содержит элементы a10 умноженные на 2. В качестве коллбека примените-напишите callback10;
+// Ну и на прокачку ваших скиллов. Напишем функцию f10, которая эмулирует метод map. Первым параметром функция принимает массив, вторым - имя функции которая применяется к элементам массива. Возвращает новый элемент. Функция коллбек должна принимать только один параметр - текущий элемент. Примените вашу функцию так, чтобы на основе массива a10, функция f10 создала массив a20_res, который содержит элементы a10 умноженные на 2. В качестве коллбека примените-напишите callback10;
 
 let a10 = [2, 3, 4, 5, 6, 7];
 let a10_res;
 
 const f10 = (arr, fc) => {
-	a10_res = []
-	for (let i of arr) {
-		a10_res.push(fc(i))
-	}
-	return a10_res
+	const a20_res = [];
+	arr.forEach((item) => {
+		a20_res.push(fc(item));
+	});
+	return a20_res;
 }
 
 function callback10(elem) {
