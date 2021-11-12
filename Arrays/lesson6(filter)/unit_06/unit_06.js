@@ -7,9 +7,7 @@ let z1 = [];
 
 const f1 = () => {
 	z1 = a1.filter(item => {
-		if (item % 2 == 0) {
-			return true
-		}
+		if (item % 2 === 0) return true;
 	})
 	console.log(z1)
 }
@@ -21,11 +19,7 @@ let a2 = [22, 33, 44, 55, 66, 77, 88, 99];
 let z2 = [];
 
 const f2 = () => {
-	z2 = a2.filter((item, index) => {
-		if (index % 2 == 0) {
-			return true
-		}
-	})
+	z2 = a2.filter((item, index) => (index % 2 === 0) ? true : false);
 	console.log(z2)
 }
 
@@ -37,14 +31,7 @@ let a3 = [2, 3, 4, 5, -6, 55, 1, 12, -3, 7, 4, 5, 2];
 let z3 = [];
 
 const f3 = () => {
-	let mas = []
-	z3 = a3.filter((item, index) => {
-		if (item > 4) {
-			mas.push(index)
-			return true
-		}
-	})
-	z3 = mas
+	z3 = a3.filter(item => item > 4);
 	console.log(z3)
 }
 
@@ -57,9 +44,7 @@ let z4 = [];
 
 const f4 = () => {
 	z4 = a4.filter(item => {
-		if (typeof (item) != "number") {
-			return true
-		}
+		if (typeof item !== "number") return true;
 	})
 	console.log(z4)
 }
@@ -71,31 +56,21 @@ let a5 = [[4, 5], [6, 7, 8], [12, 5], [47, 3, 54, 62], [5]]; // ожидаю [[4
 let z5 = [];
 
 const f5 = () => {
-	z5 = a5.filter(item => {
-		if (item.includes(5)) {
-			return true
-		}
-	})
+	z5 = a5.filter(item => item.includes(5));
 	console.log(z5)
 }
 
 // TASK 06
-//По нажатию b-6 выполняется функция f6. Функция перебирает с помощью filter массив a6 и добавляет в z6 те вложенные массивы, cумма элементов которых - четная.  Результат выводится в консоль.
+//По нажатию b-6 выполняется функция f6. Функция перебирает с помощью filter массив a6 и добавляет в z6 те вложенные массивы, cумма элементов которых - четная. Результат выводится в консоль.
 
 let a6 = [[4, 5], [6, 7, 3], [12, 5], [47, 3, 54, 62], [5]]; // ожидаю [[6,7,3], [47, 3, 54, 62]]
 let z6 = [];
 
 const f6 = () => {
 	z6 = a6.filter(item => {
-		let sum = 0
-		for (let i of item) {
-			sum += i
-		}
-		if (sum % 2 == 0) {
-			return true
-		}
-
-	})
+		const res = item.reduce((acc, num) => acc + num);
+		return res % 2 === 0;
+	} )
 	console.log(z6)
 }
 
@@ -112,12 +87,7 @@ let a7 = [
 let z7 = [];
 
 const f7 = () => {
-	z7 = a7.filter(item => {
-		let passLen = item['pass'].length
-		if (passLen <= 6) {
-			return true
-		}
-	})
+	z7 = a7.filter(item => item.pass.length <= 6);
 	console.log(z7)
 }
 
@@ -129,15 +99,11 @@ let z8 = [];
 let z8_2 = [];
 
 const f8 = () => {
-	z8 = a8.filter(item => {
-		if (item % 2 == 0) {
-			return true
-		} else {
-			z8_2.push(item)
-		}
-	})
-	console.log(z8)
-	console.log(z8_2)
+	a8.filter((item, index) => {
+		(index % 2) ? z8_2.push(item) : z8.push(item)
+	});
+	console.log(z8);
+	console.log(z8_2);
 }
 
 // TASK 09
@@ -147,34 +113,26 @@ let a9 = [6, 7, 9];
 let z9 = {}; // {6 : 6, 7: 7, 9: 9}
 
 const f9 = () => {
-	for (let i of a9) {
-		z9[i] = i
-	}
-
+	a9.forEach(item => z9[item] = item);
 	console.log(z9)
 }
 
 // TASK 10
-// // По нажатию b-10 выполняется функция f10. Функция перебирает объект a10 и создает новый объект z10 со значениямия которые по модулю больше 5. Связка ключ - значение сохраняется. Вывести результат в консоль.
+// По нажатию b-10 выполняется функция f10. Функция перебирает объект a10 и создает новый объект z10 со значениямия которые по модулю больше 5. Связка ключ - значение сохраняется. Вывести результат в консоль.
 
 let a10 = { "hi": 5, "test": 2, "best": 12, "quest": -6 };
 let z10 = {}; // ожидаю {"best" : 12, "quest" : -6};
 
 const f10 = (obj, callback10) => {
-	for (let i in obj) {
-		if (callback10(obj[i]) != undefined) {
-			z10[i] = callback10(obj[i])
-		}
-
+	for (key in obj) {
+		const res = callback10(obj[key]);
+		if (res) z10[key] = res;
 	}
-	return z10
+	return z10;
 }
 
 function callback10(elem) {
-	if (Math.abs(elem) > 5) {
-
-		return elem
-	}
+	if (Math.abs(elem) > 5) return elem
 }
 
 
