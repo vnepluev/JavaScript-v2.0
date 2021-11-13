@@ -7,8 +7,8 @@ let a1_1 = [55, 66, 77];
 let a1_res;
 
 const f1 = () => {
-	a1_res = a1.concat(a1_1)
-	document.querySelector('.out-1').innerHTML = a1_res.join(' ')
+    a1_res = a1.concat(a1_1);
+    document.querySelector('.out-1').textContent = a1_res.join(' ');
 }
 
 // TASK 02
@@ -19,8 +19,8 @@ let a2_1 = 'best';
 let a2_res;
 
 const f2 = () => {
-	a2_res = a2.concat(a2_1)
-	document.querySelector('.out-2').innerHTML = a2_res
+    a2_res = a2.concat(a2_1);
+    document.querySelector('.out-2').textContent = a2_res;
 }
 
 // TASK 03
@@ -32,8 +32,8 @@ let a3_1 = [5, 7];
 let a3_res;
 
 const f3 = () => {
-	a3_res = a3.concat(a3_1)
-	document.querySelector('.out-3').innerHTML = a3_res
+    a3_res = a3.concat(a3_1);
+    document.querySelector('.out-3').textContent = a3_res;
 }
 
 // TASK 04
@@ -45,66 +45,69 @@ let a4_1 = 'prime';
 let a4_res;
 
 const f4 = () => {
-	a4_res = a4.concat(a4_1)
-	document.querySelector('.out-4').innerHTML = a4_res.join(' ')
+    a4_res = a4.concat(a4_1);
+    document.querySelector('.out-4').textContent = a4_res;
 }
 
 // TASK 05
 // Напишите функцию f5 эмулятор concat. Функция должна принимать два аргумента массива и возвращать новый массив объединенный из этих двух. 
 
 const f5 = (ar1, ar2) => {
-	let res = []
-	for(let i of ar1) {
-		res.push(i)
-	}
-	for (let i of ar2) {
-		res.push(i)
-	}
-	return res
+    const res = ar2.reduce((acum, item) => {
+        acum.push(item);
+        return acum;
+    }, ar1);
+
+    console.log(res);
 }
 
 // TASK 06
-// Напишите функцию f6 эмулятор concat. Функция должна принимать любое количество массивов как аргументы и возвращать новый массив объединенный из принятых. 
+// Напишите функцию f6 эмулятор concat. Функция должна принимать любое количество массивов как аргументы и возвращать новый массив объединенный из принятых.
 
 
 // для примера я написал 1, но тестировать буду с любым количеством
 const f6 = (...arg1) => {
-	let res = []
-	res.push(...arg1)
-	return res
+    let res = [];
+    arg1.forEach(arr => {
+        res = arr.reduce((acc, el) => {
+            acc.push(el);
+            return acc;
+        }, res);
+    })
+    return res;
 }
 
 // TASK 07
-// По нажатию b-7 выполняется функция f7. Функция удалить 3 элемента из a7 начиная со второго индекса с помощью splice. Выведите a7 в out-7 через пробел.
+// По нажатию b-7 выполняется функция f7. Функция удалит 3 элемента из a7 начиная со второго индекса с помощью splice. Выведите a7 в out-7 через пробел.
 
 let a7 = [3, -4, 5, -6, 7, 45, 67];
 
 const f7 = () => {
-	a7.splice(2, 3)
-	document.querySelector('.out-7').innerHTML = a7.join(' ')
+    a7.splice(2, 3);
+    document.querySelector('.out-7').textContent = a7.join(' ');
 }
 
 // TASK 08
-// По нажатию b-8 выполняется функция f8. Функция удалить n8 элементoв из a8 начиная со k8 индекса с помощью splice. Выведите a8 в out-8 через пробел.
+// По нажатию b-8 выполняется функция f8. Функция удаляет n8 элементoв из a8 начиная с k8 индекса с помощью splice. Выведите a8 в out-8 через пробел.
 
 let a8 = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 1];
 n8 = 4;
 k8 = 3;
 
 const f8 = () => {
-	a8.splice(k8, n8)
-	document.querySelector('.out-8').innerHTML = a8.join(' ')
+    a8.splice(k8, n8).join(' ');
+    document.querySelector('.out-8').textContent = a8;
 }
 
 
 // TASK 09
-// По нажатию b-9 выполняется функция f9. Функция перебирает удаляет 3 элемента с начала массива a9 и добавляет элементы 7 и 8 (числа) вместо удаленных. 
+// По нажатию b-9 выполняется функция f9. Функция удаляет 3 элемента с начала массива a9 и добавляет элементы 7 и 8 (числа) вместо удаленных. 
 
 let a9 = [-2, 3, -4, 5, -6, 7]; // 105
 
 const f9 = () => {
-	a9.splice(0, 3, 7, 8)
-	document.querySelector('.out-9').innerHTML = a9.join(' ')
+    a9.splice(0, 3, 7, 8);
+    document.querySelector('.out-9').textContent = a9;
 }
 
 // TASK 10
@@ -117,15 +120,8 @@ let add = [999, 1000]
 
 // что хочу получить в результате работы функции - [-2, 3, 999,1000,  7]
 const f10 = (arr, from, num, add) => {
-	let count = 0
-	for (let i = from; i <= (from + num) - 1; i++) {
-		delete arr[i]
-			if (arr[i] == undefined) {
-				arr[i] = add[count]
-				count = count + 1
-			}	
-	}
-	return arr
+    arr.splice(from, num, add);
+    return arr;
 }
 
 
