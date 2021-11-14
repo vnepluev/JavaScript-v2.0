@@ -8,33 +8,26 @@ let a1_to = 27;
 // ожидаю 26, но вы протестируйте и на других
 
 const f1 = () => {
-	let res = a1.find(item => {
-		if (item > a1_from && item < a1_to) {
-			return true
-		}
-	})
-	document.querySelector('.out-1').innerHTML = res
+    const res = a1.find(item => {
+        if (item > a1_from && item < a1_to) return item;
+    });
+    document.querySelector('.out-1').textContent = res;
 }
 
 
 // TASK 02
 // По нажатию b-2 выполняется функция f2. Функция с помощью find должна найти первый элемент массива a2, значение которого лежит от a2_from до a2_to (больше a2_from но меньше a2_to). Вывести элемент в out-2. Если значение не найдено то выводить false.
 
-let a2 = [13, 15, 22, 23, 26, 35, 72];
+let a2 = [13, 15, 22, 23, 26, 24, 35, 72];
 let a2_from = 23
 let a2_to = 27;
 
 const f2 = () => {
-	let res = a2.find(item => {
-		if (item > a2_from && item < a2_to) {
-			return true
-		}
-	})
-	if (res === undefined) {
-		document.querySelector('.out-2').innerHTML = 'false'
-	} else {
-		document.querySelector('.out-2').innerHTML = res
-	}
+    let res = a2.find(el => {
+        if (el > a2_from && el < a2_to) return true;
+    });
+    if (res === undefined) res = false;
+    document.querySelector('.out-2').textContent = res;
 }
 
 // TASK 03
@@ -46,31 +39,31 @@ let a3_to = 72;
 let a3_res = [];
 
 const f3 = () => {
-	let res = a3.filter(item => {
-		if (item > a3_from && item < a3_to) {
-			return true
-		}
-	})
-	a3_res = res
-	document.querySelector('.out-3').innerHTML = a3_res[0]
+    // очистить массив 2 способами
+    //a3_res.length = 0;
+    a3_res.splice(0);
+
+    a3_res = a3.filter(el => {
+        if (el > a3_from && el < a3_to) return true;
+    });
+
+    document.querySelector('.out-3').textContent = a3_res[0];
 }
 
 // TASK 04
 // По нажатию b-4 выполняется функция f4. Функция с помощью FIND должна найти первый элемент строки str4, который лежит от a4_from, до a4_to(строго больше, строго меньше). Вывести результат в out-4. Если совпадений нет вывести undefined. Обратите внимание, find не работает со строками!
 
 
-let str4 = 'a_baba_galamaga_tvoe_korito_est_nesti';
+let str4 = 'a_baba_gaaaga_tve_kit_et_eti';
 let a4_from = 'k';
 let a4_to = 't';
 
 const f4 = () => {
-
-	const res = str4.split('').find(item => {
-		if (item > a4_from && item < a4_to) {
-			return true
-		}
-	})
-	document.querySelector('.out-4').innerHTML = res
+    let arr = str4.split('');
+    arr = arr.find(el => {
+        if (el > a4_from && el < a4_to) return true
+    });
+    document.querySelector('.out-4').innerHTML = arr;
 }
 
 // TASK 05
@@ -81,12 +74,10 @@ let a5_from = 23;
 let a5_to = 67;
 
 const f5 = () => {
-	let res = a5.findIndex(item => {
-		if (item > a5_from && item < a5_to) {
-			return true
-		}
-	})
-	document.querySelector('.out-5').innerHTML = res
+    const res = a5.findIndex(el => {
+        if (el > a5_from && el < a5_to) return true;
+    });
+    document.querySelector('.out-5').textContent = res;
 }
 
 // TASK 06
@@ -98,19 +89,12 @@ let a6_from = 23;
 let a6_to = 67;
 
 const f6 = () => {
-	let b6 = [...a6]
-
-	let res = b6.reverse().findIndex((item, index) => {
-		if (item > a6_from && item < a6_to) {
-			return true
-		}
-	})
-
-	if (res === -1) {
-		document.querySelector('.out-6').innerHTML = 'false'
-	} else {
-		document.querySelector('.out-6').innerHTML = (b6.length - 1) - res
-	}
+    const arr = [...a6].reverse();
+    let res = arr.findIndex(el => {
+        if (el > a6_from && el < a6_to) return true;
+    });
+    (res === -1) ? res = false : res = (a6.length - 1 - res);
+    document.querySelector('.out-6').innerHTML = res;
 }
 
 // TASK 07
@@ -121,13 +105,8 @@ let str7 = 'cccaBCcbBDabBddcCadcDbACacbbCdbBCADBDBdaAdcCd';
 let a7_1 = 'C'; // 43
 
 const f7 = () => {
-	let res = str7.toUpperCase().lastIndexOf(a7_1)
-	if (res === -1) {
-		document.querySelector('.out-7').innerHTML = -1
-	} else {
-		document.querySelector('.out-7').innerHTML = res
-	}
-
+    const res = str7.lastIndexOf(a7_1);
+    document.querySelector('.out-7').innerHTML = res;
 }
 
 // TASK 08
@@ -137,8 +116,9 @@ let str8 = 'C#CdABd$d@$Ab!#@#bcAaB@c$D#@AD$A!b#!D!BB@CaAD@###@';
 let a8_1 = 'a'; // 43 ожидаю и на a и на A
 
 const f8 = () => {
-	let res = str8.toUpperCase().lastIndexOf(a8_1.toUpperCase())
-	document.querySelector('.out-8').innerHTML = res
+    const str = str8.toUpperCase();
+    const res = str.lastIndexOf(a8_1.toUpperCase());
+    document.querySelector('.out-8').textContent = res;
 }
 
 // TASK 09
@@ -148,8 +128,7 @@ let a9 = ['2', '17', '45', '5', '14', '5', '45', '107'];
 let a9_1 = '5'; // ожидаю индекс 5
 
 const f9 = () => {
-	let res = a9.lastIndexOf(a9_1)
-	document.querySelector('.out-9').innerHTML = res
+    document.querySelector('.out-9').textContent = a9.lastIndexOf(a9_1);
 }
 
 // TASK 10
@@ -160,13 +139,12 @@ let a11 = [0, 4, 22];
 let a10_res = []; // ожидаю [-2, -6];
 
 const f10 = () => {
-	a10_res = []
-	for (let i of a11) {
-		if (a10[i] !== undefined) {
-			a10_res.push(a10[i])
-		}
-	}
-	document.querySelector('.out-10').innerHTML = a10_res.join(' ')
+    a10_res.splice(0);
+    a11.forEach(value => {
+        if (a10[value] != null) a10_res.push(a10[value]);
+
+    });
+    document.querySelector('.out-10').textContent = a10_res;
 }
 
 
