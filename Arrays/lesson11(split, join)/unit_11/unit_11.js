@@ -5,7 +5,7 @@
 let a1 = [13, 15, 22, 23, 26, 35, 72];
 
 const f1 = () => {
-    document.querySelector('.out-1').innerHTML = a1.join()
+    document.querySelector('.out-1').textContent = a1.join();
 }
 
 
@@ -15,7 +15,7 @@ const f1 = () => {
 let a2 = [13, 15, 22, 23, 26, 35, 72];
 
 const f2 = () => {
-    document.querySelector('.out-2').innerHTML = a2.join('')
+    document.querySelector('.out-2').textContent = a2.join('');
 }
 
 // TASK 03
@@ -24,27 +24,18 @@ const f2 = () => {
 let a3 = [13, 15, 22, 23, 26, 35, 72];
 
 const f3 = () => {
-    document.querySelector('.out-3').innerHTML = a3.join('=')
+    document.querySelector('.out-3').textContent = a3.join('=');
 }
 
 // TASK 04
-// По нажатию b-4 выполняется функция f4. Функция принимает два параметра - массив arr, и разделитель delimiter. Функция должна с помощью цикла эмулировать работу метода join и возвратить строку из элементов массива arr разделенных символом delimiter. Обратите внимание на конец строки!!! Функция должна возвратить строку. 
-
-
+// По нажатию b-4 выполняется функция f4. Функция принимает два параметра - массив arr, и разделитель delimiter. Функция должна с помощью цикла эмулировать работу метода join и возвратить строку из элементов массива arr разделенных символом delimiter. Обратите внимание на конец строки!!! Функция должна возвратить строку.
 
 let a4 = [66, 77, 88];
 let delimiter4 = '-';
 
 const f4 = (arr, delimiter) => {
-    let rez = ''
-    for(let i = 0; i < arr.length; i++) {
-        if(i == arr.length - 1) {
-            rez+=arr[i]
-        } else {
-            rez += arr[i] + delimiter4
-        }
-    }
-    return rez
+    let str = a4.reduce((acc, item) => acc += item + delimiter4, '');
+    return str.slice(0, -1);
 }
 
 // TASK 05
@@ -60,28 +51,28 @@ const f5 = () => {
 }
 
 // TASK 06 
-// По нажатию b-6 выполняется функция f6. Функция с помощью split разделить строку s6 на массив a6_res по элементам. Один элемент - один символ. Результат вывести в out-6.
+// По нажатию b-6 выполняется функция f6. Функция с помощью split разделяет строку s6 на массив a6_res по элементам. Один элемент - один символ. Результат вывести в out-6.
 
 
 let s6 = 'hello';
 let a6_res = [];
 
 const f6 = () => {
-    a6_res = s6.split('')
-    document.querySelector('.out-6').innerHTML = a6_res
- }
+    a6_res = [...s6.split('')];
+    document.querySelector('.out-6').textContent = a6_res;
+}
 
 
 // TASK 07
-// По нажатию b-7 выполняется функция f7. Функция с помощью split разделить строку s7 на массив a7_res по элементам. Получать из строки только 3 первых элемента. Один элемент - один символ. Результат вывести в out-7.
+// По нажатию b-7 выполняется функция f7. Функция с помощью split должна разделить строку s7 на массив a7_res по элементам. Получать из строки только 3 первых элемента. Один элемент - один символ. Результат вывести в out-7.
 
 
 let s7 = 'hello';
 let a7_res = [];
 
 const f7 = () => {
-   a7_res = s7.split('', 3)
-    document.querySelector('.out-7').innerHTML = a7_res
+    a7_res = [...s7.split('', 3)];
+    document.querySelector('.out-7').textContent = a7_res;
 }
 
 // TASK 08
@@ -91,8 +82,8 @@ let s8 = 'abrikos';
 let a8_res = '';
 
 const f8 = () => {
-    a8_res = s8.split('').reverse().join('')
-    document.querySelector('.out-8').innerHTML = a8_res
+    const res = s8.split('').reverse().join('');
+    document.querySelector('.out-8').textContent = res;
 }
 
 // TASK 09
@@ -102,8 +93,8 @@ let s9 = 'hiall';
 let a9_res = [];
 
 const f9 = () => {
-    a9_res = [...s9];
-    document.querySelector('.out-9').innerHTML = a9_res.join(' ')
+    a9_res = [...s9.split('')];
+    document.querySelector('.out-9').textContent = a9_res;
 }
 
 // TASK 10
@@ -114,14 +105,11 @@ let s10 = 'fghijklmnoprsq';
 let a10_res = [];
 
 const f10 = () => {
-    a10_res = [...s10]
-    let rez = a10_res.filter((item)=>{
-        console.log(item)
-        if(item > 'l'){
-            return true
-        }
-    })
-    document.querySelector('.out-10').innerHTML = rez
+    a10_res = [...s10.split('')];
+    const res = a10_res.filter(item => {
+        if (item > 'l') return true;
+    });
+    document.querySelector('.out-10').textContent = res.join(' ');
 }
 
 

@@ -5,8 +5,7 @@
 let a1 = [22, 33, 44, 55, 66, 77, 88];
 
 const f1 = () => {
-	let res = a1.reverse().join(' ')
-	document.querySelector('.out-1').innerHTML = res
+
 }
 
 
@@ -16,8 +15,6 @@ const f1 = () => {
 let s2 = 'mazahackercrackall';
 
 const f2 = () => {
-	let res = s2.split('').reverse().join('')
-	document.querySelector('.out-2').innerHTML = res
 }
 
 // TASK 03
@@ -28,11 +25,6 @@ let a3 = [[44, 55, 66], [77, 88, 99]]; // ожидаю 66 55 44 99 88 77
 
 
 const f3 = () => {
-	let a3_res = []
-	for (let i of a3) {
-		a3_res.push(i.reverse())
-	}
-	document.querySelector('.out-3').innerHTML = a3_res.join(' ')
 }
 
 // TASK 04
@@ -42,11 +34,6 @@ const f3 = () => {
 let a4 = [55, 66, 77, 88, 99];
 
 const f4 = () => {
-	let aNch = []
-	a4.forEach( (item) => {
-		aNch.unshift(item)
-	});
-	return aNch
 }
 
 // TASK 05
@@ -55,12 +42,6 @@ const f4 = () => {
 let a5 = [1, 2, 3, 4, 5, 6, 7, 8]; // ожидаю [2, 1, 4, 3, 6, 5, 8, 7]
 
 const f5 = () => {
-	let aNch = []
-	for(let i = 0; i < a5.length; i = i + 2) {
-		aNch.push(a5[i+1])
-		aNch.push(a5[i])
-	}
-	return aNch
 }
 
 // TASK 06
@@ -71,8 +52,6 @@ let a6 = [1, 4, 2, 6, 7, 3, 5, 2, 9];
 // a6 = ['hi', 'low', 'lo', 'hihi'];
 
 const f6 = () => {
-	a6.sort()
-	document.querySelector('.out-6').innerHTML = a6.join(' ')
 }
 
 // TASK 07
@@ -82,8 +61,6 @@ const f6 = () => {
 let a7 = [10, 4, 20, 6, 70, 30, 5, 2, 9];
 
 const f7 = () => {
-	a7.sort()
-	document.querySelector('.out-7').innerHTML = a7.join(' ')
 }
 
 // TASK 08
@@ -92,10 +69,6 @@ const f7 = () => {
 let a8 = [10, 4, 20, 6, 70, 30, 5, 2, 9];
 
 const f8 = () => {
-	a8.sort((a,b)=>{
-		return a-b
-	})
-	document.querySelector('.out-8').innerHTML = a8.join(' ')
 }
 
 // TASK 09
@@ -104,13 +77,6 @@ const f8 = () => {
 let a9 = [9, 9, 45, 3, 1, 83, 50, 6, 5, 35, 8, 4];
 
 const f9 = (s) => {
-	if(s === 'ASC') {
-		return a9.sort((a,b)=>a-b)
-	}
-
-	if(s === 'DESC') {
-	return a9.sort((a,b)=>b-a)
-	}
 }
 
 // TASK 10
@@ -129,14 +95,7 @@ let a10 = [
 ];
 
 const f10 = () => {
-	a10.sort((a,b)=>{
-		return a.age - b.age
-	})
-	let str = ''
-	for(let i of a10) {
-		str += i.name + ' '
-	}
-	document.querySelector('.out-10').innerHTML = str
+	
 }
 
 
