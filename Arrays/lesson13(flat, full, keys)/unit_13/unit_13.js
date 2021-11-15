@@ -6,6 +6,8 @@ let a1 = [13, [4, 5], 22, [6, 7], [26, 35, 72]];
 let a1_res = [];
 
 const f1 = () => {
+    a1_res = a1.flat();
+    document.querySelector('.out-1').textContent = a1_res.join(' ');
 }
 
 
@@ -16,6 +18,8 @@ let a2 = [13, [11, 22], [33, 44, 55], [66, 77, 88], 72];
 let a2_res = [];
 
 const f2 = () => {
+    a2_res = a2.flat();
+    document.querySelector('.out-2').textContent = a2_res.join(' ');
 }
 
 // TASK 03
@@ -27,16 +31,18 @@ a3[200] = [11, 22, 33, [55]];
 let a3_res = [];
 
 const f3 = () => {
+    a3_res = a3.flat(2);
+    document.querySelector('.out-3').textContent = a3_res.join(' ');
 }
 
 // TASK 04
 // По нажатию b-4 выполняется функция f4. Функция с помощью fill должна изменить массив a4 так, что со 2 индекса по 5 будут залиты числом 7. Выведите a4 в out-4, разделитель пробел.
 
-
-
 let a4 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const f4 = () => {
+    const res = a4.fill(7, 2, 4);
+    document.querySelector('.out-4').textContent = res.join(' ');
 }
 
 // TASK 05
@@ -46,12 +52,16 @@ const f4 = () => {
 let a5 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const f5 = () => {
+    const res = a5.fill(0, 2);
+    document.querySelector('.out-5').textContent = res.join(' ');
 }
 
 // TASK 06 
 // По нажатию b-6 выполняется функция f6. Напишем функцию, которая принимает 2 параметра - количество элементов массива и число, которым этот массив нужно заполнить. Возвращает массив указанной размерности заполненный указанным числом.
 
 const f6 = (l, n) => {
+    const arr = new Array(l);
+    return arr.fill(n);
 }
 
 // TASK 07
@@ -59,6 +69,15 @@ const f6 = (l, n) => {
 
 
 const f7 = (l) => {
+    const res = [];
+    for (let i = 0; i < l; i++) {
+        res.push(getRandom());
+    }
+    return res;
+
+    function getRandom() {
+        return Math.floor(Math.random() * 101);
+    }
 }
 
 // TASK 08
@@ -70,6 +89,8 @@ a8[200] = 300;
 let a8_res = [];
 
 const f8 = () => {
+    a8_res = Object.keys(a8);
+    document.querySelector('.out-8').textContent = a8_res.join(' ');
 }
 
 // TASK 09
@@ -85,6 +106,8 @@ let a9 = {
 let a9_res = [];
 
 const f9 = () => {
+    a9_res = Object.keys(a9);
+    document.querySelector('.out-9').textContent = a9_res.join(' ');
 }
 
 // TASK 10
@@ -98,6 +121,10 @@ a10[200] = 300;
 let a10_res = [];
 
 const f10 = () => {
+    a10.forEach((item, index) => {
+        a10_res.push(index);
+    });
+    document.querySelector('.out-10').textContent = a10_res.join(' ');
 }
 
 
