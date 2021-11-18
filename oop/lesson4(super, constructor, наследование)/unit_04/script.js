@@ -1,11 +1,13 @@
-let obg = new List(['one', 'two', 'three', 'four', 'Alex', 'Sonya'])
+const viewUser = new List(['one', 'two', 'tree']);
+const res = viewUser.render();
+document.querySelector('#app').append(res);
 
-document.querySelector('body').appendChild(obg.render())
+const viewUser2 = new List2(['one', 'two', 'tree']);
+viewUser2.render('User2');
 
-let obg2 = new List2(['one', 'two', 'three', 'four', 'Alex', 'Sonya'], 'superclass')
+const viewUser3 = new List2(['1', '2', '3']);
+viewUser3.render('User3');
 
-document.querySelector('body').appendChild(obg2.render())
-
-let obg3 = new List3(['one', 'two', 'three', 'four', 'Alex', 'Sonya'], ['superclass', 'text-center', 'bold', 'fontSize'])
-
-document.querySelector('body').appendChild(obg3.render())
+const viewUser4 = new List3(['text-center', 'bold', 'text-red'], ['3', '2', '1'])
+const res1 = viewUser4.render();
+document.querySelector('#app').append(res1);

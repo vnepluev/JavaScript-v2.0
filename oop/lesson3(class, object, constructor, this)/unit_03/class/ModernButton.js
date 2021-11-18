@@ -1,6 +1,11 @@
 class ModernButton extends Button {
-    constructor (borderRadius = 0) {
+    constructor(width, height, background, value, borderRadius = 0) {
+        super(width, height, background, value);
         this.borderRadius = borderRadius;
     }
-    render()
+    render() {
+        const el = super.render();
+        el.style.borderRadius = this.borderRadius + 'px';
+        return el;
+    }
 }
